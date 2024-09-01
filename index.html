@@ -3,59 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <script>
-
-console.log("Hi!");
-
-const options = ["rock", "paper", "scissors"];
-
-function getComputerChoice(){
-const choice = options[Math.floor(Math.random()* options.length)];
-console.log();
-return choice;
-}
+  
 
 
-function checkWinner(playerSelection, computerSelection){
-    if(playerSelection == computerSelection) {
-        return "Tie";
-    }
-    else if(
-        (playerSelection == "rock" && computerSelection == "scissors'") ||
-        (playerSelection == "scissors" && computerSelection == "paper") ||
-        (playerSelection == "paper" && computerSelection == "rock")
-    ){
-        return "Player";
-    }
-    else {
-        return "Computer";
-    }
+    <h1>Rock - Paper - Scissors</h1>
+
+    <div class="choices">
+        <button onClick="playGame('rock')">🪨</button>
+        <button onClick="playGame('paper')">🧻</button>
+        <button onClick="playGame('scissors')">✂️</button>
+    </div>
+ 
+    <div id="playerDisplay">Player: </div>
+    <div id="computerDisplay">Computer: </div>
+    <div id="resultDisplay"></div>
+
+    <div class="scoreDisplay">Player Score: 
+        <span id="playerScoreDisplay">0</span>
+    </div>
+
+    <div class="scoreDisplay">Computer Score: 
+        <span id="computerScoreDisplay">0</span>
+    </div>
 
 
 
-function playRound(playerSelection, computerSelection){
-const result = checkWinner(playerSelection, computerSelection);
-if(result == "Tie"){
-    return "It's a Tie!"
-}
-else if(result == "Player"){
-    return `You Win! ${playerSelection} beats ${computerSelection}`
-}
-else
-    return `You Lose! ${computerSelection} beats ${playerSelection}`
-}
-}
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection,computerSelection));
-
-
-
-
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
